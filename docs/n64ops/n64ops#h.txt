@@ -36,9 +36,9 @@ Part H: Nintendo 64 memory map                        released on 1999-04-21
 
  0x0000 0000 to 0x03EF FFFF  RDRAM memory:
  -----------------------------------------
-        0x0000 0000 to 0x001F FFFF  RDRAM range 0
-        0x0020 0000 to 0x003F FFFF  RDRAM range 1
-        0x0040 0000 to 0x03EF FFFF  Unused
+        0x0000 0000 to 0x003F FFFF  RDRAM 4MB Built-In
+        0x0040 0000 to 0x007F FFFF  RDRAM 4MB Expansion Pak
+        0x0080 0000 to 0x03EF FFFF  Unused
 
  0x03F0 0000 to 0x03FF FFFF  RDRAM registers:
  --------------------------------------------
