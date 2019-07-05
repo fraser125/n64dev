@@ -93,10 +93,11 @@ All information on the RSP was provided by my friend Zilmar.
     ------6-----------------------------5----------------------------
     |--000--|--001--|--010--|--011--|--100--|--101--|--110--|--111--| lo
  00 |  LBV  |  LSV  |  LLV  |  LDV  |  LQV  |  LRV  |  LPV  |  LUV  |
- 01 |  LHV  |  LFV  |  LWV  |  LTV  |  ---  |  ---  |  ---  |  ---  |
+ 01 |  LHV  |  LFV  |  *1   |  LTV  |  ---  |  ---  |  ---  |  ---  |
  10 |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |
  11 |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |
  hi |-------|-------|-------|-------|-------|-------|-------|-------|
+    *1 LWV instruction is not documented
 
     RSP Store: Instr. encoded by rd field when opcode field = SWC2
     31---------26-------------------15-------11---------------------0
@@ -116,11 +117,18 @@ All information on the RSP was provided by my friend Zilmar.
     |--000--|--001--|--010--|--011--|--100--|--101--|--110--|--111--| lo
 000 | VMULF | VMULU | VRNDP | VMULQ | VMUDL | VMUDM | VMUDN | VMUDH |
 001 | VMACF | VMACU | VRNDN | VMACQ | VMADL | VMADM | VMADN | VMADH |
-010 | VADD  | VSUB  | VSUT? | VABS  | VADDC | VSUBC | VADDB?| VSUBB?|
-011 | VACCB?| VSUCB?| VSAD? | VSAC? | VSUM? | VSAW  |  ---  |  ---  |
+010 | VADD  | VSUB  | *1    | VABS  | VADDC | VSUBC | *2    | *3    |
+011 | *4    | *5    | *6    | *7    | *8    | VSAR  |  ---  |  ---  |
 100 |  VLT  |  VEQ  |  VNE  |  VGE  |  VCL  |  VCH  |  VCR  | VMRG  |
 101 | VAND  | VNAND |  VOR  | VNOR  | VXOR  | VNXOR |  ---  |  ---  |
-110 | VRCP  | VRCPL | VRCPH | VMOV  | VRSQ  | VRSQL | VRSQH |  ---  |
-110 |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |
- hi |-------|-------|-------|-------|-------|-------|-------|-------|
-    Comment: Those with a ? in the end of them may not exist
+110 | VRCP  | VRCPL | VRCPH | VMOV  | VRSQ  | VRSQL | VRSQH | VNOP  |
+111 |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |  ---  |
+ hi |-------|-------|-------|-------|-------|-------|-------|-------|    
+    *1 VSUT instruction is not documented
+    *2 VADDB instruction is not documented
+    *3 VSUBB instruction is not documented
+    *4 VACCB instruction is not documented
+    *5 VSUCB instruction is not documented
+    *6 VSAD instruction is not documented
+    *7 VSAC instruction is not documented
+    *8 VSUM instruction is not documented
